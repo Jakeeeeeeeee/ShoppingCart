@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './ShoppingCart.module.scss';
+import { FiShoppingCart } from 'react-icons/fi';
 
 interface Props {}
 
@@ -26,7 +27,8 @@ class ShoppingCart extends React.Component<Props, State> {
           className={styles.button}
           onClick={this.handleClick}
         >
-          Shopping Cart
+          <FiShoppingCart />
+          <span>Shopping Cart</span>
         </button>
         {this.state.isOpen && (
           <div className={styles.cartDropDown}>
