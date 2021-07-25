@@ -17,7 +17,9 @@ class ShoppingCart extends React.Component<Props, State> {
   }
 
   handleClick = (e) => {
-    this.setState({isOpen: !this.state.isOpen})
+    if((e.target as HTMLElement).nodeName === 'SPAN'){
+      this.setState({isOpen: !this.state.isOpen})
+    }
   }
 
   render() {
