@@ -13,19 +13,31 @@ import ShoppingCart from './ShoppingCart/ShoppingCart';
 
 const App: React.FC = () => {
   const [robotGallery, setRobotGallery] = useState<any>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
 
   useEffect(() => {
+    setLoading(true);
+
     fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
-    .then((data) => setRobotGallery(data));
+    .then((data) => setRobotGallery(data))
+    .catch((e) => setError(e.message));
+
+    setLoading(false);
   }, []);
 
     return (
       <div className={styles.app}>
         <ShoppingCart />
-        <div className={styles.robotList}>
-          {robotGallery.map((r) => <Robot id={r.id} email={r.email} name={r.name} />)}
-        </div>      
+        {error && <div>Fail to load...</div>}
+        {loading ? (
+          <div>Loading</div>
+        ) : (
+          <div className={styles.robotList}>
+            {robotGallery.map((r) => <Robot id={r.id} email={r.email} name={r.name} />)}
+          </div> 
+        )}     
       </div>
     );
   }
