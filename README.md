@@ -1,8 +1,10 @@
 ## Tech Stack
 
-- React JS
+- React
 - Typescript
 - module css
+- hooks, custom hooks, context
+- HOC
 
 
 
