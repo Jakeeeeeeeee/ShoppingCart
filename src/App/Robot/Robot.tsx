@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import styles from './Robot.module.css';
+import styles from './Robot.module.scss';
 import { appContext } from '../../Context/appState';
-import { useAddToCart } from '../Hooks/useAddToCart';
+import { useAddToCart } from '../../Hooks/useAddToCart';
 
 interface RobotProps {
   id: number;

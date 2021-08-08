@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Robot from './Robot/Robot';
-import RobotDiscount from './Robot/RobotDiscount';
+import RobotDiscount from './RobotDiscount/RobotDiscount';
 import styles from './App.module.css';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
 
@@ -15,6 +15,7 @@ const App: React.FC = () => {
   const [robotGallery, setRobotGallery] = useState<any>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     setLoading(true);
@@ -27,9 +28,19 @@ const App: React.FC = () => {
     setLoading(false);
   }, []);
 
+  useEffect(() => {
+    document.title = `Clicked ${count} Times`;
+  },[count]);
+
     return (
       <div className={styles.app}>
         <ShoppingCart />
+        <button 
+          onClick={() => {setCount(count + 1)}}
+        >
+          Click
+        </button>
+
         {error && <div>Fail to load...</div>}
         {loading ? (
           <div>Loading</div>

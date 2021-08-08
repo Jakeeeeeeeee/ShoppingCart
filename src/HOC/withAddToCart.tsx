@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { appSetStateContext } from '../Context/appState';
-import { RobotProps } from '../App/Robot/RobotDiscount';
+import { RobotProps } from '../App/RobotDiscount/RobotDiscount';
 
 export const withAddToCart = (ChildrenComponent: React.ComponentType<RobotProps>) => {
   return (props) => {
