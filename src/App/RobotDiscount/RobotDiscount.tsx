@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from './Robot.module.css';
+import styles from '../Robot/Robot.module.scss';
 import { appContext } from '../../Context/appState';
 import { withAddToCart } from '../../HOC/withAddToCart';
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Robot from './Robot/Robot';
-import RobotDiscount from './Robot/RobotDiscount';
+import RobotDiscount from './RobotDiscount/RobotDiscount';
 import styles from './App.module.css';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
 

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { appSetStateContext } from '../../Context/appState';
+import { appSetStateContext } from '../Context/appState';
 
 export const useAddToCart = () => {
   const setState = useContext(appSetStateContext);
